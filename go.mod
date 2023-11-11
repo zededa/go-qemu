@@ -1,4 +1,4 @@
-module github.com/digitalocean/go-qemu
+module github.com/zededa/go-qemu
 
 go 1.18
 
