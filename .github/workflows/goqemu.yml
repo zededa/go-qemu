@@ -7,11 +7,11 @@ jobs:
     strategy:
       matrix:
         # track upstream Go's currently supported stable versions.
-        gorelease: ['1.18', '1.19']
+        gorelease: ['stable', 'oldstable']
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
-      - uses: actions/cache@v3
+      - uses: actions/cache@v4
         with:
           path: |
             ~/.cache/go-build
@@ -20,7 +20,7 @@ jobs:
           restore-keys: |
             go-${{ matrix.gorelease }}
 
-      - uses: actions/setup-go@v3
+      - uses: actions/setup-go@v5
         with:
           go-version: ${{ matrix.gorelease }}
 
